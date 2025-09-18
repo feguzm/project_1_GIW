@@ -18,6 +18,18 @@ resultados de los demás.
 # Ejercicio 1
 
 def dimension(matriz):
+    #si la matriz está vacía devuelve none
+    if not matriz:
+        return (None, None)
+    #busca las filas de la matriz
+    n_filas = len(matriz)
+    #cogerá la fila con más elementos de la matriz que será el número de columnas
+    n_columnas = max((len(fila) for fila in matriz))
+    return (n_filas, n_columnas)
+
+
+
+def es_cuadrada(matriz):
     filas = 0
     columnas = 0
     for x in matriz:
@@ -25,9 +37,6 @@ def dimension(matriz):
         for y in matriz[x]:
             columnas += 1
     return (filas, columnas)
-
-def es_cuadrada(matriz):
-    ...
 
 def es_simetrica(matriz):
     ...
@@ -54,10 +63,13 @@ def distancia(grafo, nodo):
 #a partir de aquí está el código para probar las funciones
 matriz1 = [[1, 0, 2, 5], 
            [0, 3, 3, 5], 
-           [1, 2, 2, 5]]
+           [1, 2, 2, 5]
+        ]
 
 matriz2 = [[1, 0, 1], 
            [0, 3, 2], 
-           [1, 2, 2]]
+           [1, 2, 2]
+        ]
 
 print(dimension(matriz1))
+print(dimension(matriz2))
