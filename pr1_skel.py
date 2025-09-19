@@ -30,13 +30,13 @@ def dimension(matriz):
 
 
 def es_cuadrada(matriz):
-    filas = 0
-    columnas = 0
-    for x in matriz:
-        filas += 1
-        for y in matriz[x]:
-            columnas += 1
-    return (filas, columnas)
+    #busca las filas de la matriz
+    n_filas = len(matriz)
+    #cogerá la fila con más elementos de la matriz que será el número de columnas
+    n_columnas = max(len(fila) for fila in matriz)
+    #return True if n_filas == n_columnas else False
+    return n_filas == n_columnas
+
 
 def es_simetrica(matriz):
     ...
@@ -73,3 +73,5 @@ matriz2 = [[1, 0, 1],
 
 print(dimension(matriz1))
 print(dimension(matriz2))
+
+print('es cuadrada' if es_cuadrada(matriz1) else 'no es cuadrada')
