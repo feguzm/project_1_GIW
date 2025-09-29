@@ -177,7 +177,5 @@ g = {"nodos": ["a", "b", "c", "d"],
 
 
 if (validar(g)):print("grafo ok ")
-
-
 print(grado_entrada(g, "a"))
 print(distancia(g, "a"))
